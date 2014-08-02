@@ -3,6 +3,18 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
-        <ListBox Name="Users" HorizontalAlignment="Left" Height="319" Margin="417,0,0,0" VerticalAlignment="Top" Width="100"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20*" />
+            <ColumnDefinition Width="60*" />
+            <ColumnDefinition Width="20*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100*" />
+            <RowDefinition Height="20*" />
+        </Grid.RowDefinitions>
+        
+        <ListBox Name="Rooms" Grid.RowSpan="2" Grid.Column="0"/>
+        <TextBox Name="SendMessage" Grid.Row="1" Grid.Column="1" KeyUp="SendMessage_OnKeyUp"/>
+        <ListBox Name="Users" Grid.RowSpan="2" Grid.Column="2"/>
     </Grid>
 </Window>
