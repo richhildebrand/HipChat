@@ -1,6 +1,10 @@
 #Has Auth token
 HipChatWPF/App.config
 
+#VS Files
+bin
+obj
+
 # Windows image file caches
 Thumbs.db
 ehthumbs.db

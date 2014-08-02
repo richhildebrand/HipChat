@@ -1,1 +1,16 @@
 C:\Dev\HipChat\HipChatWPF\bin\Debug\HipChatWPF.exe.config
+C:\Dev\HipChat\HipChatWPF\bin\Debug\HipChatWPF.exe
+C:\Dev\HipChat\HipChatWPF\bin\Debug\HipChatWPF.pdb
+C:\Dev\HipChat\HipChatWPF\bin\Debug\HipchatApiV2.dll
+C:\Dev\HipChat\HipChatWPF\bin\Debug\ServiceStack.Text.dll
+C:\Dev\HipChat\HipChatWPF\bin\Debug\ServiceStack.Text.xml
+C:\Dev\HipChat\HipChatWPF\obj\Debug\HipChatWPF.csprojResolveAssemblyReference.cache
+C:\Dev\HipChat\HipChatWPF\obj\Debug\MainWindow.baml
+C:\Dev\HipChat\HipChatWPF\obj\Debug\MainWindow.g.cs
+C:\Dev\HipChat\HipChatWPF\obj\Debug\App.g.cs
+C:\Dev\HipChat\HipChatWPF\obj\Debug\HipChatWPF_MarkupCompile.cache
+C:\Dev\HipChat\HipChatWPF\obj\Debug\HipChatWPF.g.resources
+C:\Dev\HipChat\HipChatWPF\obj\Debug\HipChatWPF.Properties.Resources.resources
+C:\Dev\HipChat\HipChatWPF\obj\Debug\HipChatWPF.csproj.GenerateResource.Cache
+C:\Dev\HipChat\HipChatWPF\obj\Debug\HipChatWPF.exe
+C:\Dev\HipChat\HipChatWPF\obj\Debug\HipChatWPF.pdb
