@@ -1,13 +1,11 @@
-﻿using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Configuration;
+﻿using System.Collections.ObjectModel;
 using System.Linq;
-using System.Net;
+using System.Threading;
 using System.Windows;
 using HipchatApiV2;
 using HipchatApiV2.Responses;
-using HipChatWPF.Model;
-using System.Windows.Input;
+using System.Timers;
+using HipChatWPF.Models;
 
 namespace HipChatWPF
 {
@@ -16,27 +14,50 @@ namespace HipChatWPF
     /// </summary>
     public partial class MainWindow : Window
     {
-        private HipchatClient _client;
+        private readonly HipchatClient _client;
+        private ObservableCollection<Room> _observableRooms;
+        private const int OneSecond = 1000;
+        private const int NotifyEveryNSeconds = 5;
+        private const int NotifyEvery = NotifyEveryNSeconds * OneSecond;
 
         public MainWindow()
         {
             _client = new HipchatClient();
             InitializeComponent();
             PopulateRooms();
+            PollNotifications();
+        }
+
+        private void PollNotifications()
+        {
+            var notificationTimer = new System.Timers.Timer(NotifyEvery);
+            notificationTimer.Elapsed += NotifyUser;
+            notificationTimer.Start();
+        }
+
+        private void NotifyUser(object sender, ElapsedEventArgs e)
+        {
+            var shouldNotifyUser = _observableRooms.Any(room => room.ShouldSendNotification);
+
+            if (shouldNotifyUser)
+            {
+                System.Media.SystemSounds.Exclamation.Play();
+            }
         }
 
         private void PopulateRooms()
         {
             var roomsResponse = _client.GetAllRooms();
             var rooms = roomsResponse.Items.ToList();
-            var observableRooms = new ObservableCollection<HipchatGetAllRoomsResponseItems>();
+            _observableRooms = new ObservableCollection<Room>();
 
-            foreach (var room in rooms)
+            foreach (var roomResponse in rooms)
             {
-                observableRooms.Add(room);
+                var room = new Room { Name = roomResponse.Name };
+                _observableRooms.Add(room);
             }
 
-            Rooms.ItemsSource = observableRooms;
+            Rooms.ItemsSource = _observableRooms;
         }
     }
 }

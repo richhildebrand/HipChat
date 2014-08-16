@@ -11,7 +11,8 @@
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Grid>
-                        <CheckBox Content="{ Binding Path=Name }" />
+                        <CheckBox Content="{ Binding Path=Name }"
+                                  IsChecked="{ Binding Path=ShouldSendNotification }"/>
                     </Grid>
                 </DataTemplate>
             </ListBox.ItemTemplate>
