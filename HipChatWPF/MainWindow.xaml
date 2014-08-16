@@ -6,7 +6,15 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="100*" />
         </Grid.ColumnDefinitions>
-        
-        <ListBox Name="Rooms"/>
+
+        <ListBox Name="Rooms">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <CheckBox Content="{ Binding Path=Name }" />
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
     </Grid>
 </Window>
