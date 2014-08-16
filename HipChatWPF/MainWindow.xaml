@@ -4,17 +4,9 @@
         Title="MainWindow" Height="350" Width="525">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="20*" />
-            <ColumnDefinition Width="60*" />
-            <ColumnDefinition Width="20*" />
+            <ColumnDefinition Width="100*" />
         </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="100*" />
-            <RowDefinition Height="20*" />
-        </Grid.RowDefinitions>
         
-        <ListBox Name="Rooms" Grid.RowSpan="2" Grid.Column="0"/>
-        <TextBox Name="SendMessage" Grid.Row="1" Grid.Column="1" KeyUp="SendMessage_OnKeyUp"/>
-        <ListBox Name="Users" Grid.RowSpan="2" Grid.Column="2"/>
+        <ListBox Name="Rooms"/>
     </Grid>
 </Window>
